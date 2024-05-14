@@ -1,25 +1,12 @@
-require('dotenv').config();
-import express from 'express';
-const app = express();
-app.get("/", (req, res) => {
-    res.send('Hej verden!');
-});
+import express from 'express' 
+const port = 4000
+const app = express()
 
-app.get('/about', (req, res) => {
-    res.send('Dette er about siden.');
+app.get('/',(req, res)=>{
+    res.send('Welcome')
 })
 
-app.get('/contact', (req, res) => {
-    res.send('Dette er kontakt siden.');
-});
-
-app.listen(4242, () => {
-    console.log("Express server kører.");
-});
-
-app.use((req, res, next) => {
-    res.status(404).send("Siden blev ikke fundet")
+app.listen(port, ()=> {
+    console.log(`server runs at http://localhost:${port}`)
 })
 
-const port = process.env.PORT;
-const supabaseApiKey = process.env.https//mqazwgooiooaafjhlaje.supabase.co;
