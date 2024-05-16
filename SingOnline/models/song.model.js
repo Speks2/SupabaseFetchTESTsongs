@@ -1,12 +1,12 @@
 import { supabase } from '../config/config.supabase.js'
 
-export class songmodel {
+export class SongModel {
     static async getAllRecords(){
         try {
             const {data, error} = await supabase
             .from('Songs')
             .select('title')
-            
+
             if(error) {
                 throw new Error(error)
             } else {
